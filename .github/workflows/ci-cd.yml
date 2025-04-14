@@ -34,6 +34,6 @@ jobs:
       ### Docker Image Creation From The current Project/Package ###
       - name: Build Docker Image
         run: | 
-          docker build tag
+          docker build -t
           ${{ secrets.DOCKER_USERNAME }}/
-          ${{ secrets.DOCKER_IMAGE_NAME }}:latest .
+          ${{ secrets.DOCKER_IMAGE_NAME }}:latest .../Dockerfile
