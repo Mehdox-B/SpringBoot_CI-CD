@@ -39,4 +39,4 @@ jobs:
 
       ### Docker Image Creation From The current Project/Package ###
       - name: Build Docker Image
-        run: docker build ./Docker/ -t ${{ secrets.DOCKER_USERNAME }}/spring_applicationtest:latest
+        run: docker build ./Docker/ -t ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_IMAGE }}
