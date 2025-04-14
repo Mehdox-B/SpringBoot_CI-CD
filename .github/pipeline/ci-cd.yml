@@ -1,0 +1,40 @@
+### Specify The Pipeline Name ###
+name: CI/CD PIPELINE FOR A SIMPLE SPRING APPLICATION
+
+### Specify the Trigger and where it is (name of the branch) ###
+on:
+  push:
+    branches: [ main ]
+
+### Specify the jobs ###
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      ### Checkout The code source ###
+      - name: Checkout the code source
+        uses: actions/checkout@v3
+
+      ### Setup in The Java 17 Version ###
+      - name: Set up the Java 17 version
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      ### Packaging The App using Maven ###
+      - name: Build the Jar Package using Maven
+        run: mvn clean package -DskipTests
+
+      ### Authenticate to Docker Hub Registry ###
+      - name: Log in to docker Hub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" |docker login -u "{{ secrets.DOCKER_USERNAME }} --password-stdin"
+
+      ###
+
+
+
+
+
+
