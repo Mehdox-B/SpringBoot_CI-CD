@@ -39,4 +39,4 @@ jobs:
 
       ### Docker Image Creation From The current Project/Package ###
       - name: Build Docker Image
-        run: docker build ./Docker/ -t mehdox/spring_application:v1.0.0
+        run: docker build . -t mehdox/spring_application:v1.0.0
