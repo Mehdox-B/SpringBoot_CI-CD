@@ -30,4 +30,7 @@ jobs:
       ### Authenticate to Docker Hub Registry ###
       - name: Log in to docker Hub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-      ###
+
+      ### Docker Image Creation From The current Project/Package ###
+      - name: Build Docker Image
+        run: docker build -t "${{secrets.DOCKER_USERNAME}}"/${{secrets.DOCKER_IMAGE_NAME}}:1.0.0" .
