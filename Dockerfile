@@ -3,7 +3,7 @@ FROM eclipse-temurin:17-jdk-alpine
 
 WORKDIR /spring_app
 
-COPY ../target/simple_pipeline-0.0.1-SNAPSHOT.jar ./
+COPY target/simple_pipeline-0.0.1-SNAPSHOT.jar spring.jar
 
 EXPOSE 8080
 
