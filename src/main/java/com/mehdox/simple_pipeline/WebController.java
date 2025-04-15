@@ -14,4 +14,8 @@ public class WebController {
     public String getMessage(){
         return "Le message est bien recupere par l'utilisateur";
     }
+    @GetMapping("getMessage2")
+    public String getMessage2(){
+        return "Le message est bien recupere par l'utilisateur 2";
+    }
 }
