@@ -39,8 +39,8 @@ jobs:
 
       ### Docker Image Creation From The current Project/Package ###
       - name: Build Docker Image
-        run: docker build . -t ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_IMAGE }}:"latest"
+        run: docker build . -t ${{ secrets.DOCKER_FULLNAME }}
 
       ### Pushing Docker Image in Docker HUB ###
       - name: Push docker image to docker hub
-        run: docker push  ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_IMAGE }}:"latest"
+        run: docker push  ${{ secrets.DOCKER_FULLNAME }}
